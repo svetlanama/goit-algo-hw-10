@@ -60,3 +60,17 @@ For very large sums, the dynamic programming algorithm can become significantly 
     -   **Less Effective When:** The target sum is very large and computational time is a critical factor, as its performance degrades linearly with the target sum.
 
 **Conclusion:** For typical currency systems like the one provided ([50, 25, 10, 5, 2, 1]), the greedy algorithm is generally preferred due to its simplicity and superior performance for large sums, as it still yields the optimal solution. However, for more general coin systems where greedy choices might not lead to an optimal solution, dynamic programming is the correct and necessary approach to guarantee the minimum number of coins.
+
+## 3. Monte Carlo Integration: `task2.py`
+
+### Description
+This task demonstrates the Monte Carlo method for approximating definite integrals, comparing its results to those obtained from `scipy.integrate.quad` for analytical calculation. The function integrated is \(f(x) = x^2\) from \(a = 0\) to \(b = 2\).
+
+### Results
+Monte Carlo Integral Estimate: 2.677200
+Analytical Integral (quad) Estimate: 2.666667
+Absolute Error for quad: 2.960595e-14
+
+--- Conclusions ---
+Difference between Monte Carlo and Analytical: 0.010533
+The Monte Carlo method provides an approximation of the integral. Its accuracy depends on the number of random points used. With a larger number of points (e.g., 100,000), the estimate gets closer to the true analytical value. The `scipy.integrate.quad` function provides a highly accurate (nearly exact) numerical integration result, which serves as a good benchmark for comparison.
